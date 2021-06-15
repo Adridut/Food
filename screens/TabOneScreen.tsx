@@ -5,7 +5,6 @@ import { StyleSheet, ScrollView, Text, View, Image, TextInput } from 'react-nati
 import { Dimensions } from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;
-const windowHeight = Dimensions.get('window').height;
 
 
 import Card from '../components/Card';
@@ -109,6 +108,8 @@ export default function TabOneScreen() {
 
   const [filter, setFilter] = useState('food');
   const [search, setSearch] = useState('');
+  const [searching, setSearching] = useState(false);
+
 
 
   return (
@@ -116,21 +117,23 @@ export default function TabOneScreen() {
       <Text style={styles.title}>Delicious food for you</Text>
       <View style={styles.container}>
         <View style={styles.searchContainer}>
-          <Image style={{ width: 20, height: 20, marginRight: 5 }} source={require('../assets/images/search.png')}
+          <Image style={styles.image} source={require('../assets/images/search.png')}
           />
           <TextInput
-          style={{width: '90%'}}
+            style={{ width: '90%' }}
             onChangeText={setSearch}
             value={search} placeholder="Search..."
+            onFocus={() => setSearching(true)}
+            onEndEditing={() => setSearching(false)}
           ></TextInput>
         </View>
-        <ScrollView horizontal style={{ flexGrow: 0, margin: 10 }} showsHorizontalScrollIndicator={false}>
+        <ScrollView horizontal style={styles.scroll} showsHorizontalScrollIndicator={false}>
           <Text style={[filter == 'food' ? styles.selectedFilter : styles.filter]} onPress={() => setFilter('food')}>Foods</Text>
           <Text style={[filter == 'drink' ? styles.selectedFilter : styles.filter]} onPress={() => setFilter('drink')}>Drinks</Text>
           <Text style={[filter == 'snack' ? styles.selectedFilter : styles.filter]} onPress={() => setFilter('snack')}>Snacks</Text>
           <Text style={[filter == 'sauce' ? styles.selectedFilter : styles.filter]} onPress={() => setFilter('sauce')}>Sauces</Text>
         </ScrollView>
-        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <ScrollView horizontal style={styles.scroll} showsHorizontalScrollIndicator={false}>
           {DATA.filter(value => value.type == filter && value.name.includes(search)).map((value, index = value.id) => {
             return <Card name={value.name} price={value.price}></Card>
           })}
@@ -143,7 +146,7 @@ export default function TabOneScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    marginTop: 50
+    marginTop: 50,
   },
   container: {
     alignItems: 'center',
@@ -173,5 +176,14 @@ const styles = StyleSheet.create({
     padding: 10,
     flexDirection: 'row',
     margin: 10
+  },
+  image: {
+    width: 20,
+    height: 20,
+    marginRight: 5
+  },
+  scroll: {
+    flexGrow: 0,
+    margin: 10,
   }
 });
