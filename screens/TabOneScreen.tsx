@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { StyleSheet, ScrollView, Text, View, Image, TextInput } from 'react-native';
+import { ScrollView, Text, View, Image, TextInput } from 'react-native';
 
-import { Dimensions } from 'react-native';
 
-const windowWidth = Dimensions.get('window').width;
-
+import styles from './TabOneStyle'
 
 import Card from '../components/Card';
 
@@ -108,9 +106,6 @@ export default function TabOneScreen() {
 
   const [filter, setFilter] = useState('food');
   const [search, setSearch] = useState('');
-  const [searching, setSearching] = useState(false);
-
-
 
   return (
     <View style={styles.screen}>
@@ -120,11 +115,9 @@ export default function TabOneScreen() {
           <Image style={styles.image} source={require('../assets/images/search.png')}
           />
           <TextInput
-            style={{ width: '90%' }}
+            style={styles.input}
             onChangeText={setSearch}
             value={search} placeholder="Search..."
-            onFocus={() => setSearching(true)}
-            onEndEditing={() => setSearching(false)}
           ></TextInput>
         </View>
         <ScrollView horizontal style={styles.scroll} showsHorizontalScrollIndicator={false}>
@@ -143,47 +136,3 @@ export default function TabOneScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  screen: {
-    flex: 1,
-    marginTop: 50,
-  },
-  container: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 15
-  },
-  title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-    margin: 10
-  },
-  filter: {
-    margin: 8,
-    color: '#9A9A9D'
-  },
-  selectedFilter: {
-    color: '#FA4A0C',
-    margin: 8,
-    borderBottomColor: '#FA4A0C',
-    borderBottomWidth: 3
-  },
-  searchContainer: {
-    height: 40,
-    width: 30 + windowWidth / 2,
-    backgroundColor: '#EFEEEE',
-    borderRadius: 30,
-    padding: 10,
-    flexDirection: 'row',
-    margin: 10
-  },
-  image: {
-    width: 20,
-    height: 20,
-    marginRight: 5
-  },
-  scroll: {
-    flexGrow: 0,
-    margin: 10,
-  }
-});
