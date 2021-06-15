@@ -12,7 +12,7 @@ export default function Card({ name, price }: { name: string, price: string }) {
             <View style={styles.card}>
                 <Image style={styles.image} source={require('../assets/images/salmon.png')}
                 />
-                <Text>{name}</Text>
+                <Text style={styles.name}>{name}</Text>
                 <Text style={styles.price}>{price}</Text>
             </View>
         </View>
@@ -24,26 +24,28 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'white',
-        width: 50 + windowWidth / 12,
-        height: 80 + windowHeight / 12,
+        width: 80 + windowWidth / 6,
+        height: 80 + windowHeight / 6,
         borderRadius: 15,
-        margin: 5,
+        margin: 10,
         shadowOffset: {
             width: 0,
-            height: 10,
+            height: 1,
         },
         shadowOpacity: 0.15,
         shadowRadius: 15,
-        elevation: 10,
+        elevation: 8,
     },
     image: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: 30 + windowHeight / 15,
-        height: 30 + windowHeight / 15,
+        width: 30 + windowHeight / 10,
+        height: 30 + windowHeight / 10,
         borderRadius: 100,
     },
     price: {
-        color: '#FA4A0C'
+        color: '#FA4A0C',
+        fontWeight: 'bold',
+    },
+    name: {
+        fontWeight: 'bold',
     },
 });
