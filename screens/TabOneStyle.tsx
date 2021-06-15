@@ -48,6 +48,11 @@ const styles = StyleSheet.create({
     },
     input: {
       width: '90%',
+    },
+    icons: {
+      margin: 5,
+      width: 20,
+      height: 20
     }
   });
 

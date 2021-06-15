@@ -2,6 +2,9 @@ import * as React from 'react';
 import { useState } from 'react';
 import { ScrollView, Text, View, Image, TextInput } from 'react-native';
 
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faBars, faShoppingCart, faHome, faUser, faHeart, faHistory } from '@fortawesome/free-solid-svg-icons'
+
 
 import styles from './TabOneStyle'
 
@@ -109,6 +112,10 @@ export default function TabOneScreen() {
 
   return (
     <View style={styles.screen}>
+      <View style={{ flexDirection: 'row' }}>
+        <FontAwesomeIcon icon={faBars} />
+        <FontAwesomeIcon icon={faShoppingCart} />
+      </View>
       <Text style={styles.title}>Delicious food for you</Text>
       <View style={styles.container}>
         <View style={styles.searchContainer}>
@@ -131,6 +138,12 @@ export default function TabOneScreen() {
             return <Card name={value.name} price={value.price}></Card>
           })}
         </ScrollView>
+        <View style={{ flexDirection: 'row' }}>
+          <FontAwesomeIcon icon={faHome} style={styles.icons}/>
+          <FontAwesomeIcon icon={faHeart} style={styles.icons}/>
+          <FontAwesomeIcon icon={faUser} style={styles.icons}/>
+          <FontAwesomeIcon icon={faHistory} style={styles.icons}/>
+        </View>
       </View>
     </View>
   );
