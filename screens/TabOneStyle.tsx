@@ -37,12 +37,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     margin: 10,
     marginTop: 20,
-    marginBottom: 20
+    marginBottom: 20,
+    alignItems: 'center'
   },
   image: {
-    width: 20,
-    height: 20,
     marginRight: 5
+  },
+  search: {
+    marginRight: 5,
+    color: primaryColor
   },
   scroll: {
     flexGrow: 0,

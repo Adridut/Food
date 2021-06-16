@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ScrollView, Text, View, Image, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faBars, faShoppingCart, faHome, faUser, faHeart, faHistory } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faShoppingCart, faHome, faUser, faHeart, faHistory, faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 import styles from './TabOneStyle'
@@ -120,8 +120,7 @@ export default function TabOneScreen() {
       </View>
       <Text style={styles.title}>Delicious food for you</Text>
       <View style={styles.searchContainer}>
-        <Image style={styles.image} source={require('../assets/images/search.png')}
-        />
+        <FontAwesomeIcon icon={faSearch} style={[search != '' ? styles.search : styles.image]} />
         <TextInput
           style={styles.input}
           onChangeText={setSearch}
