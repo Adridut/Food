@@ -17,13 +17,15 @@ const styles = StyleSheet.create({
     },
     filter: {
       margin: 8,
-      color: '#9A9A9D'
+      color: '#9A9A9D',
+      fontSize: 17
     },
     selectedFilter: {
       color: '#FA4A0C',
       margin: 8,
       borderBottomColor: '#FA4A0C',
-      borderBottomWidth: 3
+      borderBottomWidth: 3,
+      fontSize: 17
     },
     searchContainer: {
       height: 40,
@@ -32,7 +34,9 @@ const styles = StyleSheet.create({
       borderRadius: 30,
       padding: 10,
       flexDirection: 'row',
-      margin: 10
+      margin: 10,
+      marginTop: 20,
+      marginBottom: 20
     },
     image: {
       width: 20,
@@ -42,6 +46,8 @@ const styles = StyleSheet.create({
     scroll: {
       flexGrow: 0,
       margin: 10,
+      marginBottom: 20,
+      marginTop: 20
     },
     input: {
       width: '90%',

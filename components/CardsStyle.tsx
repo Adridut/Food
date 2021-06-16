@@ -45,6 +45,14 @@ const styles = StyleSheet.create({
     imageContainer: {
         position: 'absolute',
         top: -10,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.15,
+        shadowRadius: 100,
+        elevation: 8,
+        borderRadius: 100,
     }
 });
 
