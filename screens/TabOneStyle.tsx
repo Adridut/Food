@@ -12,7 +12,8 @@ const styles = StyleSheet.create({
     title: {
       fontSize: 30,
       fontWeight: 'bold',
-      margin: 10
+      margin: 10,
+      marginTop: 20
     },
     filter: {
       margin: 8,

@@ -134,7 +134,7 @@ export default function TabOneScreen() {
         </ScrollView>
         <ScrollView horizontal style={styles.scroll} showsHorizontalScrollIndicator={false}>
           {DATA.filter(value => value.type == filter && value.name.includes(search)).map((value, index = value.id) => {
-            return <Card name={value.name} price={value.price}></Card>
+            return <Card name={value.name} price={value.price} key={value.id}></Card>
           })}
         </ScrollView>
         <View style={{ flexDirection: 'row', position: 'absolute', bottom: 0 }}>
