@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'white',
-        width: 80 + windowWidth / 6,
-        height: 80 + windowHeight / 6,
+        width: 150,
+        height: 180,
         borderRadius: 15,
         margin: 10,
         shadowOffset: {
@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
         elevation: 8,
     },
     image: {
-        width: 30 + windowHeight / 10,
-        height: 30 + windowHeight / 10,
+        width: 70,
+        height: 70,
         borderRadius: 100,
     },
     price: {

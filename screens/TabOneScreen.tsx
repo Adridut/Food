@@ -112,12 +112,11 @@ export default function TabOneScreen() {
 
   return (
     <View style={styles.screen}>
-      <View style={{ flexDirection: 'row' }}>
-        <FontAwesomeIcon icon={faBars} />
-        <FontAwesomeIcon icon={faShoppingCart} />
+      <View style={styles.iconsTop}>
+        <FontAwesomeIcon icon={faBars} style={styles.menu}/>
+        <FontAwesomeIcon icon={faShoppingCart} style={styles.cart}/>
       </View>
       <Text style={styles.title}>Delicious food for you</Text>
-      <View style={styles.container}>
         <View style={styles.searchContainer}>
           <Image style={styles.image} source={require('../assets/images/search.png')}
           />
@@ -138,13 +137,12 @@ export default function TabOneScreen() {
             return <Card name={value.name} price={value.price}></Card>
           })}
         </ScrollView>
-        <View style={{ flexDirection: 'row' }}>
-          <FontAwesomeIcon icon={faHome} style={styles.icons}/>
+        <View style={{ flexDirection: 'row', position: 'absolute', bottom: 0 }}>
+          <FontAwesomeIcon icon={faHome} style={styles.homeIcon}/>
           <FontAwesomeIcon icon={faHeart} style={styles.icons}/>
           <FontAwesomeIcon icon={faUser} style={styles.icons}/>
           <FontAwesomeIcon icon={faHistory} style={styles.icons}/>
         </View>
-      </View>
     </View>
   );
 }

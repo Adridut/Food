@@ -6,12 +6,8 @@ const windowWidth = Dimensions.get('window').width;
 const styles = StyleSheet.create({
     screen: {
       flex: 1,
-      marginTop: 50,
-    },
-    container: {
       alignItems: 'center',
-      justifyContent: 'center',
-      marginTop: 15
+      marginTop: 50
     },
     title: {
       fontSize: 30,
@@ -50,9 +46,26 @@ const styles = StyleSheet.create({
       width: '90%',
     },
     icons: {
-      margin: 5,
-      width: 20,
-      height: 20
+      margin: 20,
+      color: '#ADADAF',
+    },
+    homeIcon: {
+      margin: 20,
+      color: '#FA4A0C'
+    },
+    iconsTop: {
+      flexDirection: 'row',
+      marginBottom: 15,
+      width: '75%'
+    },
+    cart: {
+      position: 'absolute',
+      right: 0,
+      color: '#ADADAF'
+    },
+    menu: {
+      position: 'absolute',
+      left: 0
     }
   });
 
