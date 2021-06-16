@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.15,
         shadowRadius: 15,
-        elevation: 8,
+        elevation: 6,
     },
     image: {
         width: 100,
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     name: {
         fontWeight: 'bold',
         fontSize: 22,
-        marginBottom: 10
+        marginBottom: 10,
     },
     textContainer: {
         position: 'absolute',
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
         top: -10,
         shadowOffset: {
             width: 0,
-            height: 2,
+            height: 1,
         },
         shadowOpacity: 0.15,
         shadowRadius: 100,
