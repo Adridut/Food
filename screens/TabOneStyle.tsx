@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     alignItems: 'center',
-    marginTop: 50
+    marginTop: 50,
   },
   title: {
     fontSize: 30,
@@ -50,17 +50,21 @@ const styles = StyleSheet.create({
     flexGrow: 0,
     margin: 10,
     marginBottom: 15,
-    marginTop: 15
+    marginTop: 15,
   },
   input: {
     width: '90%',
   },
   icons: {
-    margin: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 10,
     color: '#ADADAF',
   },
   homeIcon: {
-    margin: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 10,
     color: primaryColor
   },
   iconsTop: {
