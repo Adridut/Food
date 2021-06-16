@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { Dimensions } from 'react-native';
+import primaryColor from '../constants/colors'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -23,12 +24,12 @@ const styles = StyleSheet.create({
         elevation: 8,
     },
     image: {
-        width: 90,
-        height: 90,
+        width: 100,
+        height: 100,
         borderRadius: 100,
     },
     price: {
-        color: '#FA4A0C',
+        color: primaryColor,
         fontWeight: 'bold',
         fontSize: 17
     },

@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { Dimensions } from 'react-native';
+import primaryColor from '../constants/colors'
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -21,9 +22,9 @@ const styles = StyleSheet.create({
       fontSize: 17
     },
     selectedFilter: {
-      color: '#FA4A0C',
+      color: primaryColor,
       margin: 8,
-      borderBottomColor: '#FA4A0C',
+      borderBottomColor: primaryColor,
       borderBottomWidth: 3,
       fontSize: 17
     },
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
     },
     homeIcon: {
       margin: 20,
-      color: '#FA4A0C'
+      color: primaryColor
     },
     iconsTop: {
       flexDirection: 'row',

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { ScrollView, Text, View, Image, TextInput } from 'react-native';
+import { ScrollView, Text, View, Image, TextInput, NativeAppEventEmitter } from 'react-native';
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faBars, faShoppingCart, faHome, faUser, faHeart, faHistory } from '@fortawesome/free-solid-svg-icons'
@@ -113,36 +113,36 @@ export default function TabOneScreen() {
   return (
     <View style={styles.screen}>
       <View style={styles.iconsTop}>
-        <FontAwesomeIcon icon={faBars} style={styles.menu}/>
-        <FontAwesomeIcon icon={faShoppingCart} style={styles.cart}/>
+        <FontAwesomeIcon icon={faBars} style={styles.menu} />
+        <FontAwesomeIcon icon={faShoppingCart} style={styles.cart} />
       </View>
       <Text style={styles.title}>Delicious food for you</Text>
-        <View style={styles.searchContainer}>
-          <Image style={styles.image} source={require('../assets/images/search.png')}
-          />
-          <TextInput
-            style={styles.input}
-            onChangeText={setSearch}
-            value={search} placeholder="Search..."
-          ></TextInput>
-        </View>
-        <ScrollView horizontal style={styles.scroll} showsHorizontalScrollIndicator={false}>
-          <Text style={[filter == 'food' ? styles.selectedFilter : styles.filter]} onPress={() => setFilter('food')}>Foods</Text>
-          <Text style={[filter == 'drink' ? styles.selectedFilter : styles.filter]} onPress={() => setFilter('drink')}>Drinks</Text>
-          <Text style={[filter == 'snack' ? styles.selectedFilter : styles.filter]} onPress={() => setFilter('snack')}>Snacks</Text>
-          <Text style={[filter == 'sauce' ? styles.selectedFilter : styles.filter]} onPress={() => setFilter('sauce')}>Sauces</Text>
-        </ScrollView>
-        <ScrollView horizontal style={styles.scroll} showsHorizontalScrollIndicator={false}>
-          {DATA.filter(value => value.type == filter && value.name.includes(search)).map((value, index = value.id) => {
-            return <Card name={value.name} price={value.price} key={value.id}></Card>
-          })}
-        </ScrollView>
-        <View style={{ flexDirection: 'row', position: 'absolute', bottom: 0 }}>
-          <FontAwesomeIcon icon={faHome} style={styles.homeIcon}/>
-          <FontAwesomeIcon icon={faHeart} style={styles.icons}/>
-          <FontAwesomeIcon icon={faUser} style={styles.icons}/>
-          <FontAwesomeIcon icon={faHistory} style={styles.icons}/>
-        </View>
+      <View style={styles.searchContainer}>
+        <Image style={styles.image} source={require('../assets/images/search.png')}
+        />
+        <TextInput
+          style={styles.input}
+          onChangeText={setSearch}
+          value={search} placeholder="Search..."
+        ></TextInput>
+      </View>
+      <ScrollView horizontal style={styles.scroll} showsHorizontalScrollIndicator={false}>
+        <Text style={[filter == 'food' ? styles.selectedFilter : styles.filter]} onPress={() => setFilter('food')}>Foods</Text>
+        <Text style={[filter == 'drink' ? styles.selectedFilter : styles.filter]} onPress={() => setFilter('drink')}>Drinks</Text>
+        <Text style={[filter == 'snack' ? styles.selectedFilter : styles.filter]} onPress={() => setFilter('snack')}>Snacks</Text>
+        <Text style={[filter == 'sauce' ? styles.selectedFilter : styles.filter]} onPress={() => setFilter('sauce')}>Sauces</Text>
+      </ScrollView>
+      <ScrollView horizontal style={styles.scroll} showsHorizontalScrollIndicator={false}>
+        {DATA.filter(value => value.type == filter && value.name.includes(search)).map((value, index = value.id) => {
+          return <Card name={value.name} price={value.price} key={value.id}></Card>
+        })}
+      </ScrollView>
+      <View style={{ flexDirection: 'row', position: 'absolute', bottom: 0 }}>
+        <FontAwesomeIcon icon={faHome} style={styles.homeIcon} />
+        <FontAwesomeIcon icon={faHeart} style={styles.icons} />
+        <FontAwesomeIcon icon={faUser} style={styles.icons} />
+        <FontAwesomeIcon icon={faHistory} style={styles.icons} />
+      </View>
     </View>
   );
 }
