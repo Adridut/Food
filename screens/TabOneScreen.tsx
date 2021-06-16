@@ -134,7 +134,7 @@ export default function TabOneScreen() {
         <Text style={[filter == 'sauce' ? styles.selectedFilter : styles.filter]} onPress={() => setFilter('sauce')}>Sauces</Text>
       </ScrollView>
       <ScrollView horizontal style={styles.scroll} showsHorizontalScrollIndicator={false}>
-        {DATA.filter(value => value.type == filter && value.name.includes(search)).map((value, index = value.id) => {
+        {DATA.filter(value => value.type == filter && value.name.toLocaleLowerCase().includes(search.toLocaleLowerCase())).map((value, index = value.id) => {
           return <Card name={value.name} price={value.price} key={value.id}></Card>
         })}
       </ScrollView>

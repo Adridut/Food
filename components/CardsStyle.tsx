@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 22,
         marginBottom: 10,
+        margin: 10
     },
     textContainer: {
         position: 'absolute',

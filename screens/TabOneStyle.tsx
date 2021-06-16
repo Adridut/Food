@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     margin: 10,
     marginTop: 20,
-    marginBottom: 20,
     alignItems: 'center'
   },
   image: {
@@ -50,8 +49,8 @@ const styles = StyleSheet.create({
   scroll: {
     flexGrow: 0,
     margin: 10,
-    marginBottom: 20,
-    marginTop: 20
+    marginBottom: 15,
+    marginTop: 15
   },
   input: {
     width: '90%',

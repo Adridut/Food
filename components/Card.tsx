@@ -14,7 +14,7 @@ export default function Card({ name, price }: { name: string, price: string }) {
                     />
                 </View>
                 <View style={styles.textContainer}>
-                    <Text style={styles.name}>{name}</Text>
+                    <Text style={styles.name} numberOfLines={1}>{name}</Text>
                     <Text style={styles.price}>{price}</Text>
                 </View>
             </View>
