@@ -23,17 +23,29 @@ const styles = StyleSheet.create({
         elevation: 8,
     },
     image: {
-        width: 70,
-        height: 70,
+        width: 90,
+        height: 90,
         borderRadius: 100,
     },
     price: {
         color: '#FA4A0C',
         fontWeight: 'bold',
+        fontSize: 17
     },
     name: {
         fontWeight: 'bold',
+        fontSize: 22,
+        marginBottom: 10
     },
+    textContainer: {
+        position: 'absolute',
+        bottom: 15,
+        alignItems: 'center',
+    },
+    imageContainer: {
+        position: 'absolute',
+        top: -10,
+    }
 });
 
 export default styles;
